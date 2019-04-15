@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteBase /cms/public/
+RewriteRule ^$ index.php [L,QSA]
+
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule postdetail/(.*) postdetail.php?id=$1 [L,QSA]
+
+RewriteRule pagedetail/(.*) pagedetail.php?id=$1 [L,QSA]

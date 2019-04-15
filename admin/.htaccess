@@ -1,0 +1,23 @@
+RewriteEngine On
+
+RewriteBase /cms/admin/
+
+RewriteRule ^$ view/pagemanager.php [L,QSA]
+RewriteRule ^([^\.]+)$ view/$1.php [NC,L]
+
+
+
+RewriteRule edit/(.*)/(.*) view/editpage.php?slug=$1&id=$2 [L,QSA]
+
+RewriteRule editimage/(.*) view/editimage.php?id=$1 [L,QSA]
+
+RewriteRule editpost/(.*) view/editpost.php?id=$1 [L,QSA]
+
+
+
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteCond %{REQUEST_FILENAME}\.php -f
+
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
